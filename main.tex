@@ -1,0 +1,295 @@
+\documentclass[11pt]{article}
+
+% ================ PACKAGES ====================
+
+\usepackage[reset, a4paper, margin=6mm, top=7mm, right=4mm]{geometry}
+% text alignment
+\usepackage{ragged2e}
+% loremipsum
+\usepackage{lipsum}
+% text color
+\usepackage{color}
+\usepackage{xcolor}
+% underline
+\usepackage{ulem}
+\usepackage{contour}
+% multiple columns
+\usepackage{paracol}
+% custom fonts
+\usepackage{fontspec}
+% paper bg
+\usepackage{eso-pic}
+% icons
+\usepackage{fontawesome5}
+% hyperlinks
+\usepackage{hyperref}
+% better itemize
+\usepackage{enumitem}
+
+% ================ SETTINGS ====================
+
+\setlist[itemize]{noitemsep, topsep=-2pt, leftmargin=2ex}
+
+\setromanfont{CormorantGaramond}
+\setsansfont{SourceSerifPro}
+\renewcommand{\familydefault}{\rmdefault}
+
+% no page numbers and the sorts
+\thispagestyle{empty}
+% no indentation at beginning of paragraph
+\parindent=0pt
+% for underline
+\renewcommand{\ULdepth}{3pt}
+\renewcommand{\ULthickness}{0.5pt}
+\contourlength{2.0pt}
+
+% for links
+\hypersetup{
+    colorlinks=false,
+    pdfborder = {0 0 0},
+}
+
+% no hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% ================ MACROS ======================
+
+\newfontfamily\titlethin{CormorantGaramond-Light}
+\newfontfamily\titlethick{CormorantGaramond-Medium}
+\newfontfamily\titlebold{CormorantGaramond-Bold}
+\newfontfamily\normaltext{SourceSerifPro}
+
+\newcommand{\resumetitle}[3]{
+    \AddToShipoutPictureBG{
+        \AtPageUpperLeft {
+        \raisebox{-0.09\paperheight}{
+            \color{black!85}\rule{2\paperwidth}{\paperheight}}
+        }}
+    \begin{Center}
+        \begingroup
+        \titlethin
+        \color{black!10}\Huge{#1}
+        \textbf{-}
+        \titlethick
+        \color{black!5}\Huge{#2} \\
+        \vspace{2mm}
+        \textrm{\color{black!15}\Large{#3}}
+        \endgroup
+    \end{Center}
+    \vspace{7mm}
+}
+
+\newcommand{\betteruline}[1]{
+    \uline{#1}
+}
+
+\newcommand{\sectiontitle}[1]{
+    \begingroup
+        \titlebold
+        \betteruline{\Large\uppercase{#1}  }
+        \vspace{1.7mm}
+    \endgroup
+}
+
+\newcommand{\sectioncontent}[1]{
+    \begingroup
+        \begin{FlushLeft}
+        \vspace{-3mm}
+        \sffamily\small#1
+        \end{FlushLeft}
+    \endgroup
+    \vspace{2mm}
+}
+
+\newcommand{\job}[4]{
+    \begingroup
+        \textbf{\small#1}
+        \hfill\color{black!70}\small{#3}
+        \\
+        \small#2
+        \hfill\color{black!70}\small{#4}
+    \endgroup
+}
+
+\newcommand{\project}[2]{
+    \begingroup
+        \textbf{\small#1}
+        \hfill\color{black!70}\small{#2}
+    \endgroup
+}
+
+\newcommand{\spacevv}{
+    \vspace{2mm}
+}
+
+\newcommand{\honor}[2]{
+    \textcolor{black!70}{#1} - #2 \\
+    \vspace{1.5mm}
+}
+
+\begin{document}
+    \resumetitle{Rishabh Ranjan}{Fullstack Software Engineer} {
+        \faIcon{envelope}\hspace{2mm}rrrishabh7@gmail.com |
+        \faIcon{phone}\hspace{2mm}+91-9820960142 |
+        \faIcon{map-marker-alt}\hspace{2mm}Navi Mumbai |
+        \faIcon{github-alt}\hspace{2mm}
+        \href{https://github.com/rr250}{rr250} |
+        \faIcon{linkedin-in}\hspace{2.1mm}
+        \href{https://www.linkedin.com/in/rr-vii/}{rr-vii}
+    }
+
+    \columnratio{0.3}
+    \setlength{\columnsep}{3mm}
+    \begin{paracol}{2}
+
+    \sectiontitle{about me}
+    \sectioncontent{
+        Skilled Software Development Engineer currently working at Telio, proficient in Reactjs and Java, with a strong background in software development and design, excellent problem-solving skills, and dedicated team player.
+    }
+
+    \sectiontitle{projects}
+    \sectioncontent{
+
+        \project{\href{https://happyfier.firebaseapp.com/}{Happyfier}}{Firebase, Reactjs, Nodejs}
+        \begin{itemize}
+            \item  A mental health platform for sharing stories, receiving help from psychiatrists and volunteers, and using a gratitude journal to improve
+mental wellbeing. 
+        \end{itemize}
+        \spacevv
+       
+        \project{\href{ github.com/rr250/jobpost-plugin}{jobpost-plugin}}{Go, Mattermost}
+        \begin{itemize}
+            \item  The Jobpost Plugin streamlined the process of job applications, reducing clutter and spam, and allowing recruiters to track applicants
+through google sheets. 
+        \end{itemize}
+        \spacevv
+    }
+
+    \sectiontitle{Internships}
+    \sectioncontent{
+
+      \job{
+AntWorks R\&D (Maples Imaging Solutions)}{Image Processing and Machine Learning Intern}{May 2019 to Jul 2019}{}
+      \begin{itemize}
+        \item Utilized CNN and CTC loss function to detect and recognize Arabic handwritten text.  
+      \end{itemize}
+      \spacevv
+
+      \job{IIT Bombay Under Prof. Amitabh Sanyal}{Machine Learning Research Intern}{May 2018 to Jul 2018}{}
+      \\
+      \spacevv
+      \job{Scaler}{Campus Ambassador}{}{}
+      \\
+      \spacevv
+      \job{Placement Committee of SNU}{Student Coordinator}{}{}
+      \\
+      \spacevv
+    }
+
+    \sectiontitle{education}
+    \sectioncontent{
+        \textbf{B.Tech. in Computer Science Engineering} \\
+        Shiv Nadar University - \\
+        \textcolor{black!70}{2016 - 2020} \\
+    }
+
+    \sectiontitle{Achievements}
+    \sectioncontent{
+        \honor{2020}{1st Hackathon, Scaler}
+        \honor{2019}{Dean’sList, SNU}
+        \honor{2019}{Top100 CodersBit2.0, InterviewBit}
+        \honor{2016}{7742 rank, IITJEEAdvance}
+    }
+    
+
+    \switchcolumn
+
+    \sectiontitle{skills}
+    \sectioncontent{
+        \begin{itemize}
+        \item \color{black!70}\small{Reactjs, Nodejs, React Native, Redux}
+        \item \color{black!70}\small{Java(Springboot)}
+        \item \color{black!70}\small{Python(Flask, Django)}
+        \item \color{black!70}\small{Golang}
+        \item \color{black!70}\small{MongoDB, MySQL, Firebase, DialogFlow, Redis}
+        \item \color{black!70}\small{Elasticsearch, Logstash, Hawkeye, and Monstashe}
+        \item \color{black!70}\small{Image Processing, Deep Learning}
+        \end{itemize}
+    }
+
+    \sectiontitle{experience}
+    \sectioncontent{
+
+      \job{Telio R\&D India Private Limited}{Software Development Engineer - 1}{Bangalore(Remote) | Sep 2021 to Present}{Reactjs, Java, Nodejs, ES, Postgres, MongoDB}{}\\
+      \textrm{Developed and managed a dashboard for managing various aspects of the business, including orders, promotions, catalogs, customers, and users.}
+      \begin{itemize}
+        \item Implemented a Net Take Rate (NTR) feature that ensures any price changes require approval if it would cause the NTR to fall below a minimum value which helped improve net revenue by 0.5%.
+        \item Created a Lego UI Library to provide frontend developers with custom React components that follow Phoenix's design guidelines.
+        \item Implemented a workflow approval feature to ensure all changes are authorized by higher management, reducing the risk of errors
+reducing errors by 33%.
+        \item Implemented Schedule Price and Tier Price features for SKUs, allowing for lower prices for scheduled durations and more quantities.
+        \item Implemented user management and customer management features within Phoenix to streamline these processes and eliminate the need for a complex Keycloak interface.
+        \item Improved search functionality across the platform.
+        \item Managed and guided interns in the implementation of location and VAT info modules.
+      \end{itemize}
+      \vspace{4mm}
+
+      
+      \job{Shopse}{Software Engineer}{Mumbai(Remote) | Oct 2020 to Sep 2021}{Flask,Springboot,Reactjs,MongoDB}{}\\
+      \textrm{Developed and managed a dashboard for internal users(such as managers, sales team, and customer care) and merchants (Byjus, Simplilearn, VLCC, Honda, etc.), and lenders (Ujjivan, Axis banks).}
+      \begin{itemize}
+        \item Designed and implemented a Two Wheeler Loan with Ujjivan and TVS.
+        \item Implemented a Sales team dashboard that allows sales agents to track all their leads and managers to monitor the team's
+performance.
+        \item Assisted Transaction feature helped customer care identify customers facing difficulties in transactions and reduce failed transaction percentage by around 65%.
+        \item Improved roles framework in the dashboard and backed everything by permissions.
+        \item Improved AWS SNS lambda functions for various communications like WhatsApp, SMS, email, Slack, etc.
+        \item Work directly contributed to the company securing ₹40Cr funding.
+      \end{itemize}
+      \vspace{4mm}
+      
+      \job{Scaler Academy (Previously known as InterviewBit)}{Software Engineer Intern}{Bangalore(Remote) | Jun 2020 to Oct 2020}{Golang,Reactjs,MySql}{}\\
+      \textrm{Managed Scaler Chat, an open-source platform with a user base of 25,000 and 2,000 daily users
+Developed plugins for various functionalities such as job postings, reporting posts, and contest and tech news alerts}
+      \begin{itemize}
+        \item Ensured a safe environment for female users by implementing a report post plugin.
+        \item Developed a Hacker News Bot to post top tech news.
+        \item Integration for recruiters to post jobs and users to apply resulted in 5000+ monthly applications on 200+ job posts.
+      \end{itemize}
+      \vspace{4mm}
+
+      \job{ACE Online (Previously known as Frost Interactive)}{Software Engineer Intern}{Bangalore | Jan 2020 to May 2020}{Java, Reactjs}{}\\
+      \begin{itemize}
+        \item Conducted research on SMS OTP services and implemented AWS SNS.
+        \item Implemented Caching through Redis.
+        \item Worked on Payment-Service for multi payment-gateways.
+      \end{itemize}
+      \vspace{4mm}
+
+      % \job{Copmapny}{Title}{Location | date}{skills}{}\\
+      % \textrm{description}
+      % \begin{itemize}
+      %   \item bullet point 1
+      %   \item bullet point 2
+      % \end{itemize}
+      % \vspace{4mm}
+
+      % \job{Copmapny}{Title}{Location | date}{skills}{}\\
+      % \textrm{description}
+      % \begin{itemize}
+      %   \item bullet point 1
+      %   \item bullet point 2
+      % \end{itemize}
+      % \vspace{4mm}
+
+      
+    }
+
+    \normaltext \hfill \tiny Last updated \today
+
+    \end{paracol}
+
+\end{document}
