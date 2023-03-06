@@ -28,7 +28,7 @@
 
 % ================ SETTINGS ====================
 
-\setlist[itemize]{noitemsep, topsep=-2pt, leftmargin=2ex}
+\setlist[itemize]{noitemsep, topsep=-2pt, leftmargin=2ex, rightmargin=2ex}
 
 \setromanfont{CormorantGaramond}
 \setsansfont{SourceSerifPro}
@@ -62,18 +62,29 @@
 \newfontfamily\titlebold{CormorantGaramond-Bold}
 \newfontfamily\normaltext{SourceSerifPro}
 
-\newcommand{\resumetitle}[3]{
-    \AddToShipoutPictureBG{
-        \AtPageUpperLeft {
-        \raisebox{-0.09\paperheight}{
-            \color{black!85}\rule{2\paperwidth}{\paperheight}}
+\AddToShipoutPictureBG{%
+        \AtPageUpperLeft {%
+        \raisebox{%
+        -1\paperheight}{%
+            \color{teal!5}\rule{0.31\paperwidth}%
+            {\paperheight}}
         }}
+
+\AddToShipoutPictureBG{%
+        \AtPageUpperLeft {%
+        \raisebox{%
+        -0.09\paperheight}{%
+            \color{teal!85}\rule{2\paperwidth}%
+            {\paperheight}}
+        }}
+        
+\newcommand{\resumetitle}[3]{
     \begin{Center}
         \begingroup
-        \titlethin
+        \titlethick
         \color{black!10}\Huge{#1}
         \textbf{-}
-        \titlethick
+        \titlethin
         \color{black!5}\Huge{#2} \\
         \vspace{2mm}
         \textrm{\color{black!15}\Large{#3}}
@@ -132,35 +143,36 @@
 
 \begin{document}
     \resumetitle{Rishabh Ranjan}{Fullstack Software Engineer} {
-        \faIcon{envelope}\hspace{2mm}rrrishabh7@gmail.com |
-        \faIcon{phone}\hspace{2mm}+91-9820960142 |
-        \faIcon{map-marker-alt}\hspace{2mm}Navi Mumbai |
-        \faIcon{github-alt}\hspace{2mm}
-        \href{https://github.com/rr250}{rr250} |
-        \faIcon{linkedin-in}\hspace{2.1mm}
+        \faIcon{envelope} 
+        \href{mailto:rrrishabh7@gmail.com}{rrrishabh7@gmail.com}\hspace{2mm}|\hspace{2mm}
+        \faIcon{phone} 
+        \href{tel:+919820960142}{+91-9820960142}\hspace{2mm}|\hspace{2mm}
+        \faIcon{map-marker-alt} 
+        \href{https://goo.gl/maps/ypJSzX5hg8upjiG88}{Navi Mumbai}\hspace{2mm}|\hspace{2mm}
+        \faIcon{github-alt} 
+        \href{https://github.com/rr250}{rr250}\hspace{2mm}|\hspace{2mm}
+        \faIcon{linkedin-in} 
         \href{https://www.linkedin.com/in/rr-vii/}{rr-vii}
     }
 
-    \columnratio{0.3}
-    \setlength{\columnsep}{3mm}
+    \columnratio{0.29}
+    \setlength{\columnsep}{5mm}
     \begin{paracol}{2}
 
     \sectiontitle{about me}
     \sectioncontent{
-        Skilled Software Development Engineer currently working at Telio, proficient in Reactjs and Java, with a strong background in software development and design, excellent problem-solving skills, and dedicated team player.
+        Skilled Software Development Engineer currently working at Telio, proficient in React.js and Java, with a strong background in software development and design, excellent problem-solving skills, and dedicated team player.
     }
 
     \sectiontitle{projects}
     \sectioncontent{
-
-        \project{\href{https://happyfier.firebaseapp.com/}{Happyfier}}{Firebase, Reactjs, Nodejs}
+        \project{\href{https://happyfier.firebaseapp.com/}{Happyfier}}{Firebase, React.js}
         \begin{itemize}
-            \item  A mental health platform for sharing stories, receiving help from psychiatrists and volunteers, and using a gratitude journal to improve
-mental wellbeing. 
+            \item  A mental health platform for sharing stories, receiving help from psychiatrists and volunteers, and using a gratitude journal to improve mental wellbeing. 
         \end{itemize}
         \spacevv
        
-        \project{\href{ github.com/rr250/jobpost-plugin}{jobpost-plugin}}{Go, Mattermost}
+        \project{\href{https://www.github.com/rr250/jobpost-plugin}{jobpost-plugin}}{Go, Mattermost}
         \begin{itemize}
             \item  The Jobpost Plugin streamlined the process of job applications, reducing clutter and spam, and allowing recruiters to track applicants
 through google sheets. 
@@ -172,13 +184,13 @@ through google sheets.
     \sectioncontent{
 
       \job{
-AntWorks R\&D (Maples Imaging Solutions)}{Image Processing and Machine Learning Intern}{May 2019 to Jul 2019}{}
+AntWorks}{Image Processing and Machine Learning Intern}{May 2019 to Jul 2019}{}
       \begin{itemize}
         \item Utilized CNN and CTC loss function to detect and recognize Arabic handwritten text.  
       \end{itemize}
       \spacevv
 
-      \job{IIT Bombay Under Prof. Amitabh Sanyal}{Machine Learning Research Intern}{May 2018 to Jul 2018}{}
+      \job{IIT Bombay - Prof. Amitabh Sanyal}{Machine Learning Research Intern}{May 2018 to Jul 2018}{}
       \\
       \spacevv
       \job{Scaler}{Campus Ambassador}{}{}
@@ -191,8 +203,8 @@ AntWorks R\&D (Maples Imaging Solutions)}{Image Processing and Machine Learning 
 
     \sectiontitle{education}
     \sectioncontent{
-        \textbf{B.Tech. in Computer Science Engineering} \\
-        Shiv Nadar University - \\
+        \textbf{B.Tech. in Computer Science Engineering Major \\with Mathematics Minor} \\
+        Shiv Nadar University - 
         \textcolor{black!70}{2016 - 2020} \\
     }
 
@@ -201,7 +213,7 @@ AntWorks R\&D (Maples Imaging Solutions)}{Image Processing and Machine Learning 
         \honor{2020}{1st Hackathon, Scaler}
         \honor{2019}{Dean’sList, SNU}
         \honor{2019}{Top100 CodersBit2.0, InterviewBit}
-        \honor{2016}{7742 rank, IITJEEAdvance}
+        \honor{2016}{7742 rank, IIT-JEE Advance}
     }
     
 
@@ -210,58 +222,53 @@ AntWorks R\&D (Maples Imaging Solutions)}{Image Processing and Machine Learning 
     \sectiontitle{skills}
     \sectioncontent{
         \begin{itemize}
-        \item \color{black!70}\small{Reactjs, Nodejs, React Native, Redux}
-        \item \color{black!70}\small{Java(Springboot)}
-        \item \color{black!70}\small{Python(Flask, Django)}
-        \item \color{black!70}\small{Golang}
-        \item \color{black!70}\small{MongoDB, MySQL, Firebase, DialogFlow, Redis}
-        \item \color{black!70}\small{Elasticsearch, Logstash, Hawkeye, and Monstashe}
-        \item \color{black!70}\small{Image Processing, Deep Learning}
+        \item \color{black!70}\small{\textbf{React.js}, React Native, Redux, React Hooks}
+        \item \color{black!70}\small{\textbf{Node.js}, Java(\textbf{Springboot}), Python(\textbf{Flask}, Django), \textbf{Golang}}
+        \item \color{black!70}\small{\textbf{Postgres, MongoDB, MySQL}, Firebase, Redis}
+        \item \color{black!70}\small{\textbf{Elasticsearch, Logstash}, Hawkeye, and Monstashe}
+        \item \color{black!70}\small{DialogFlow, Image Processing, Deep Learning}
         \end{itemize}
     }
 
     \sectiontitle{experience}
     \sectioncontent{
 
-      \job{Telio R\&D India Private Limited}{Software Development Engineer - 1}{Bangalore(Remote) | Sep 2021 to Present}{Reactjs, Java, Nodejs, ES, Postgres, MongoDB}{}\\
-      \textrm{Developed and managed a dashboard for managing various aspects of the business, including orders, promotions, catalogs, customers, and users.}
+      \job{Telio R\&D India Private Limited}{SDE-1}{Bangalore(Remote) | Sep 2021 to Present}{React.js, Java, Node.js, ES, Postgres, MongoDB}{}\\
+      \textrm{Developed and oversaw a comprehensive \textbf{dashboard} to manage diverse aspects of the business, such as \textbf{orders, promotions, catalogs, customers, and users}, and collaborated with \textbf{cross-functional teams} for effective implementation.}
       \begin{itemize}
-        \item Implemented a Net Take Rate (NTR) feature that ensures any price changes require approval if it would cause the NTR to fall below a minimum value which helped improve net revenue by 0.5%.
-        \item Created a Lego UI Library to provide frontend developers with custom React components that follow Phoenix's design guidelines.
-        \item Implemented a workflow approval feature to ensure all changes are authorized by higher management, reducing the risk of errors
-reducing errors by 33%.
-        \item Implemented Schedule Price and Tier Price features for SKUs, allowing for lower prices for scheduled durations and more quantities.
-        \item Implemented user management and customer management features within Phoenix to streamline these processes and eliminate the need for a complex Keycloak interface.
+        \item \textbf{Improved net revenue by 0.5\%} by implementing a \textbf{Net Take Rate (NTR)} feature that ensures any price changes require approval if it would cause the NTR to fall below a minimum value.
+        \item Created a \textbf{Lego UI Library} to provide frontend developers with custom React components that follow Phoenix's design guidelines.
+        \item \textbf{Reduced errors by 33\%} by implementing a \textbf{workflow approval} feature to ensure all changes are authorized by higher management.
+        \item Implemented \textbf{Schedule Price and Tier Price} features for SKUs, allowing for lower prices for scheduled durations and more quantities respectively.
+        \item Implemented \textbf{user management and customer management} features within Phoenix to streamline these processes and eliminate the need for a complex Keycloak interface.
         \item Improved search functionality across the platform.
-        \item Managed and guided interns in the implementation of location and VAT info modules.
+        \item \textbf{Managed and guided interns} in the implementation of location and VAT info modules.
       \end{itemize}
       \vspace{4mm}
 
       
-      \job{Shopse}{Software Engineer}{Mumbai(Remote) | Oct 2020 to Sep 2021}{Flask,Springboot,Reactjs,MongoDB}{}\\
-      \textrm{Developed and managed a dashboard for internal users(such as managers, sales team, and customer care) and merchants (Byjus, Simplilearn, VLCC, Honda, etc.), and lenders (Ujjivan, Axis banks).}
+      \job{Shopse}{Software Engineer}{Mumbai(Remote) | Oct 2020 to Sep 2021}{Flask,Springboot,React.js,MongoDB}{}\\
+      \textrm{Developed and managed a dashboard for internal users(such as managers, sales team, and customer care) and merchants (\textbf{Byjus, Simplilearn, VLCC, Honda}, etc.), and lenders (\textbf{Ujjivan, Axis banks}).}
       \begin{itemize}
-        \item Designed and implemented a Two Wheeler Loan with Ujjivan and TVS.
-        \item Implemented a Sales team dashboard that allows sales agents to track all their leads and managers to monitor the team's
-performance.
-        \item Assisted Transaction feature helped customer care identify customers facing difficulties in transactions and reduce failed transaction percentage by around 65%.
-        \item Improved roles framework in the dashboard and backed everything by permissions.
-        \item Improved AWS SNS lambda functions for various communications like WhatsApp, SMS, email, Slack, etc.
-        \item Work directly contributed to the company securing ₹40Cr funding.
+        \item Designed and implemented a \textbf{Two Wheeler Loan with Ujjivan and TVS}.
+        \item Implemented a \textbf{Sales team dashboard} that allows sales agents to track all their leads and managers to monitor the team's performance.
+        \item Assisted Transaction feature helped customer care identify customers facing difficulties in transactions and \textbf{reduce failed transaction percentage by 65\%}.
+        \item Improved \textbf{roles framework} in the dashboard and backed everything by permissions.
+        \item Improved \textbf{AWS SNS lambda functions} for various communications like WhatsApp, SMS, email, Slack, etc.
+        \item Work directly contributed to the company \textbf{securing ₹40Cr funding}.
       \end{itemize}
       \vspace{4mm}
       
-      \job{Scaler Academy (Previously known as InterviewBit)}{Software Engineer Intern}{Bangalore(Remote) | Jun 2020 to Oct 2020}{Golang,Reactjs,MySql}{}\\
-      \textrm{Managed Scaler Chat, an open-source platform with a user base of 25,000 and 2,000 daily users
-Developed plugins for various functionalities such as job postings, reporting posts, and contest and tech news alerts}
+      \job{Scaler (Previously known as InterviewBit)}{Software Engineer Intern}{Bangalore(Remote) | Jun 2020 to Oct 2020}{Golang,React.js,MySql}{}\\
+      \textrm{Managed \textbf{Scaler Chat}, an open-source platform with a user base of \textbf{25,000 and 2,000 daily users}. Developed plugins for various functionalities such as \textbf{job postings, reporting posts, and contest and tech news alerts}.}
       \begin{itemize}
-        \item Ensured a safe environment for female users by implementing a report post plugin.
+        \item Ensured a \textbf{safe environment for female users} by implementing a report post plugin.
         \item Developed a Hacker News Bot to post top tech news.
-        \item Integration for recruiters to post jobs and users to apply resulted in 5000+ monthly applications on 200+ job posts.
+        \item Integration for recruiters to post jobs and users to apply resulted in \textbf{5000+ monthly applications on 200+ monthly job posts}.
       \end{itemize}
       \vspace{4mm}
 
-      \job{ACE Online (Previously known as Frost Interactive)}{Software Engineer Intern}{Bangalore | Jan 2020 to May 2020}{Java, Reactjs}{}\\
+      \job{ACE Online (Previously known as Frost Interactive)}{Software Engineer Intern}{Bangalore | Jan 2020 to May 2020}{Java, React.js}{}\\
       \begin{itemize}
         \item Conducted research on SMS OTP services and implemented AWS SNS.
         \item Implemented Caching through Redis.
@@ -288,7 +295,7 @@ Developed plugins for various functionalities such as job postings, reporting po
       
     }
 
-    \normaltext \hfill \tiny Last updated \today
+    % \normaltext \hfill \tiny Last updated \today
 
     \end{paracol}
 
