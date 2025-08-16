@@ -1,302 +1,120 @@
-\documentclass[11pt]{article}
+% ------------------------------ Document Class & Packages ------------------------------
+\documentclass[11pt,a4paper,sans]{moderncv}
 
-% ================ PACKAGES ====================
+% Modern CV style and colors
+\moderncvstyle{banking}
+\moderncvcolor{black}
 
-\usepackage[reset, a4paper, margin=6mm, top=7mm, right=4mm]{geometry}
-% text alignment
-\usepackage{ragged2e}
-% loremipsum
-\usepackage{lipsum}
-% text color
-\usepackage{color}
-\usepackage{xcolor}
-% underline
-\usepackage{ulem}
-\usepackage{contour}
-% multiple columns
-\usepackage{paracol}
-% custom fonts
-\usepackage{fontspec}
-% paper bg
-\usepackage{eso-pic}
-% icons
-\usepackage{fontawesome5}
-% hyperlinks
-\usepackage{hyperref}
-% better itemize
-\usepackage{enumitem}
+% Character encoding and page geometry
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.85,top=1cm,bottom=1.3cm]{geometry}
 
-% ================ SETTINGS ====================
+% Reduce whitespace around sections
+\usepackage{etoolbox}
+\patchcmd{\section}{\vspace{2.5ex}}{\vspace{1.5ex}}{}{}
 
-\setlist[itemize]{noitemsep, topsep=-2pt, leftmargin=2ex, rightmargin=2ex}
+% ------------------------------ Personal Data ------------------------------
+\name{Rishabh}{Ranjan}
+\title{Senior Software Engineer II \& UI Lead}
+\address{Navi Mumbai, India}
+\phone[mobile]{+91-9820960142}
+\email{rrrishabh7@gmail.com}
+\social[linkedin]{rr-vii}
+\social[github]{rr250}
 
-\setromanfont{CormorantGaramond}
-\setsansfont{SourceSerifPro}
-\renewcommand{\familydefault}{\rmdefault}
-
-% no page numbers and the sorts
-\thispagestyle{empty}
-% no indentation at beginning of paragraph
-\parindent=0pt
-% for underline
-\renewcommand{\ULdepth}{3pt}
-\renewcommand{\ULthickness}{0.5pt}
-\contourlength{2.0pt}
-
-% for links
-\hypersetup{
-    colorlinks=false,
-    pdfborder = {0 0 0},
-}
-
-% no hyphenation
-\tolerance=1
-\emergencystretch=\maxdimen
-\hyphenpenalty=10000
-\hbadness=10000
-
-% ================ MACROS ======================
-
-\newfontfamily\titlethin{CormorantGaramond-Light}
-\newfontfamily\titlethick{CormorantGaramond-Medium}
-\newfontfamily\titlebold{CormorantGaramond-Bold}
-\newfontfamily\normaltext{SourceSerifPro}
-
-\AddToShipoutPictureBG{%
-        \AtPageUpperLeft {%
-        \raisebox{%
-        -1\paperheight}{%
-            \color{teal!5}\rule{0.31\paperwidth}%
-            {\paperheight}}
-        }}
-
-\AddToShipoutPictureBG{%
-        \AtPageUpperLeft {%
-        \raisebox{%
-        -0.09\paperheight}{%
-            \color{teal!85}\rule{2\paperwidth}%
-            {\paperheight}}
-        }}
-        
-\newcommand{\resumetitle}[3]{
-    \begin{Center}
-        \begingroup
-        \titlethick
-        \color{black!10}\Huge{#1}
-        \textbf{-}
-        \titlethin
-        \color{black!5}\Huge{#2} \\
-        \vspace{2mm}
-        \textrm{\color{black!15}\Large{#3}}
-        \endgroup
-    \end{Center}
-    \vspace{7mm}
-}
-
-\newcommand{\betteruline}[1]{
-    \uline{#1}
-}
-
-\newcommand{\sectiontitle}[1]{
-    \begingroup
-        \titlebold
-        \betteruline{\Large\uppercase{#1}  }
-        \vspace{1.7mm}
-    \endgroup
-}
-
-\newcommand{\sectioncontent}[1]{
-    \begingroup
-        \begin{FlushLeft}
-        \vspace{-3mm}
-        \sffamily\small#1
-        \end{FlushLeft}
-    \endgroup
-    \vspace{2mm}
-}
-
-\newcommand{\job}[4]{
-    \begingroup
-        \textbf{\small#1}
-        \hfill\color{black!70}\small{#3}
-        \\
-        \small#2
-        \hfill\color{black!70}\small{#4}
-    \endgroup
-}
-
-\newcommand{\project}[2]{
-    \begingroup
-        \textbf{\small#1}
-        \hfill\color{black!70}\small{#2}
-    \endgroup
-}
-
-\newcommand{\spacevv}{
-    \vspace{2mm}
-}
-
-\newcommand{\honor}[2]{
-    \textcolor{black!70}{#1} - #2 \\
-    \vspace{1.5mm}
-}
-
+% ------------------------------ Document ------------------------------
 \begin{document}
-    \resumetitle{Rishabh Ranjan}{Fullstack Software Engineer} {
-        \faIcon{envelope} 
-        \href{mailto:rrrishabh7@gmail.com}{rrrishabh7@gmail.com}\hspace{2mm}|\hspace{2mm}
-        \faIcon{phone} 
-        \href{tel:+919820960142}{+91-9820960142}\hspace{2mm}|\hspace{2mm}
-        \faIcon{map-marker-alt} 
-        \href{https://goo.gl/maps/ypJSzX5hg8upjiG88}{Navi Mumbai}\hspace{2mm}|\hspace{2mm}
-        \faIcon{github-alt} 
-        \href{https://github.com/rr250}{rr250}\hspace{2mm}|\hspace{2mm}
-        \faIcon{linkedin-in} 
-        \href{https://www.linkedin.com/in/rr-vii/}{rr-vii}
-    }
 
-    \columnratio{0.29}
-    \setlength{\columnsep}{5mm}
-    \begin{paracol}{2}
+\makecvtitle
 
-    \sectiontitle{about me}
-    \sectioncontent{
-        Skilled Software Development Engineer currently working at Telio, proficient in React.js and Java, with a strong background in software development and design, excellent problem-solving skills, and dedicated team player.
-    }
+% ------------------------------ Professional Summary ------------------------------
+\section{Professional Summary}
+\cvitem{}{Highly accomplished Senior Software Engineer II with 5+ years of full-stack development experience and proven leadership in UI architecture and team management. Currently UI Lead at ConnectWise, recognised for exceptional delivery speed and leading cross-functional initiatives for enterprise-scale platforms. Expert in React.js, Golang, Java and system design with a track record of mentoring teams and delivering critical features for various conferences.}
 
-    \sectiontitle{projects}
-    \sectioncontent{
-        \project{\href{https://happyfier.firebaseapp.com/}{Happyfier}}{Firebase, React.js}
-        \begin{itemize}
-            \item  A mental health platform for sharing stories, receiving help from psychiatrists and volunteers, and using a gratitude journal to improve mental wellbeing. 
-        \end{itemize}
-        \spacevv
-       
-        \project{\href{https://www.github.com/rr250/jobpost-plugin}{jobpost-plugin}}{Go, Mattermost}
-        \begin{itemize}
-            \item  The Jobpost Plugin streamlined the process of job applications, reducing clutter and spam, and allowing recruiters to track applicants
-through google sheets. 
-        \end{itemize}
-        \spacevv
-    }
+% ------------------------------ Technical Skills ------------------------------
+\section{Technical Skills}
+\cvdoubleitem{Frontend}{React.js, React Hooks, TypeScript, MUI}{Backend}{Golang, Node.js, Python, GraphQL}
+\cvdoubleitem{Databases}{PostgreSQL, MongoDB, Redis, MySQL, Firebase}{Cloud \& DevOps}{AWS (SNS, Lambda), Docker, Git, Elasticsearch}
+\cvdoubleitem{State Management}{TanStack React Query, Redux, Context API}{Performance}{Lazy Loading, Bundle Optimization, Caching Strategies}
+\cvdoubleitem{UI Libraries}{MUI DataGrid, Storybook, Component Libraries}{Specializations}{Full-stack Architecture, Team Leadership, System Design}
 
-    \sectiontitle{Internships}
-    \sectioncontent{
+% ------------------------------ Professional Experience ------------------------------
+\section{Professional Experience}
 
-      \job{
-AntWorks}{Image Processing and Machine Learning Intern}{May 2019 to Jul 2019}{}
-      \begin{itemize}
-        \item Utilized CNN and CTC loss function to detect and recognize Arabic handwritten text.  
-      \end{itemize}
-      \spacevv
+\cventry{Aug 2023--Present}{Senior Software Engineer II \& UI Lead}{ConnectWise LLP}{Mumbai (Remote)}{}{
+\begin{itemize}
+\item \textbf{Leadership \& Recognition:} Promoted to UI Lead (Jan 2024) after senior departures, then to Senior SWE II (Jun 2025); earned Q3 2024 award for leadership in Asio Ticketing and PSA-in-ASIO IT Nation deliverables
+\item \textbf{High-Performance Delivery:} Achieved 90\% story completion within estimated timeframes with minimal bugs; nicknamed "Cheetah" for exceptional development speed and last-minute critical feature delivery
+\item \textbf{Performance Optimisation :} Implemented lazy loading and eliminated unnecessary API calls, reducing page size and bundle size by 50\%; integrated TanStack React Query for intelligent caching, dramatically reducing server requests and improving user experience
+\item \textbf{Advanced MUI Implementation:} Developed complex MUI DataGrid solutions, including header filters, right-click context menus, tree grids, and accordion components; created sophisticated data visualisation and interaction patterns
+\item \textbf{Full-Stack Architecture:} Led end-to-end development of Export to Excel feature across multiple services (ticket-service, GraphQL-service, file-service) and UI components, serving 25,000+ daily active users
+\item \textbf{Advanced UI Systems:} Implemented grid rework with advanced filtering, OR operators, date filters, header customisation, and preference saving; integrated dark mode, translation support, and landing page customisation
+\item \textbf{State Management Modernisation :} Replaced complex Redux store logic with TanStack React Query, reducing codebase complexity and improving data consistency across components
+\item \textbf{Cross-Project Leadership:} Collaborated with the system design team on common components and PSA-in-ASIO integration; developed details pods, financial recaps, navigation systems, and conversion workflows
+\item \textbf{Team Development:} Mentored junior developers, conducted campus recruitment drives, successfully hired team members, and led refactoring initiatives, reducing code duplication across vendor teams
+\end{itemize}}
 
-      \job{IIT Bombay - Prof. Amitabh Sanyal}{Machine Learning Research Intern}{May 2018 to Jul 2018}{}
-      \\
-      \spacevv
-      \job{Scaler}{Campus Ambassador}{}{}
-      \\
-      \spacevv
-      \job{Placement Committee of SNU}{Student Coordinator}{}{}
-      \\
-      \spacevv
-    }
+\cventry{Sep 2021--Aug 2023}{Software Engineer I}{Telio R\&D India Private Limited}{Bangalore (Remote)}{}{
+\begin{itemize}
+\item \textbf{Business Impact:} Improved net revenue by 0.5\% through Net Take Rate (NTR) approval workflows; reduced operational errors by 33\% via management approval systems for pricing changes
+\item \textbf{Component Architecture:} Created "Lego" UI component library following Phoenix design guidelines, accelerating development cycles and ensuring design consistency across teams
+\item \textbf{E-commerce Platform:} Built a comprehensive dashboard managing orders, promotions, catalogues, customers, and users; implemented Schedule Price and Tier Price features for dynamic SKU pricing
+\item \textbf{System Optimisation :} Enhanced platform search functionality and streamlined user/customer management, eliminating complex Keycloak interface dependencies
+\item \textbf{Mentorship:} Guided interns in implementing location and VAT information modules, contributing to team knowledge transfer and capability building
+\end{itemize}}
 
-    \sectiontitle{education}
-    \sectioncontent{
-        \textbf{B.Tech. in Computer Science Engineering Major \\with Mathematics Minor} \\
-        Shiv Nadar University - 
-        \textcolor{black!70}{2016 - 2020} \\
-    }
+\cventry{Oct 2020--Sep 2021}{Software Engineer}{ShopSe Digital Finance}{Mumbai (Remote)}{}{
+\begin{itemize}
+\item \textbf{Financial Products:} Designed and launched Two Wheeler Loan partnership with Ujjivan Bank and TVS, expanding the company's lending portfolio and market reach
+\item \textbf{Operational Excellence:} Developed "Assisted Transaction" feature reducing failed transactions by 65\%; built comprehensive dashboards for internal teams and enterprise merchants (Byjus, VLCC, Honda)
+\item \textbf{Scalable Infrastructure:} Enhanced AWS SNS Lambda functions for multi-channel communications (WhatsApp, SMS, email, Slack); improved role-based access control frameworks
+\item \textbf{Business Growth:} Engineering contributions directly supported the company securing Rs 40 Cr Series A funding through improved platform reliability and feature completeness
+\end{itemize}}
 
-    \sectiontitle{Achievements}
-    \sectioncontent{
-        \honor{2020}{1st Hackathon, Scaler}
-        \honor{2019}{Dean’sList, SNU}
-        \honor{2019}{Top100 CodersBit2.0, InterviewBit}
-        \honor{2016}{7742 rank, IIT-JEE Advance}
-    }
-    
+\cventry{Jun--Oct 2020}{Software Engineer Intern}{Scaler (InterviewBit)}{Bangalore (Remote)}{}{
+\begin{itemize}
+\item \textbf{Platform Management:} Maintained Scaler Chat with 25,000+ users and 2,000 daily active users; developed plugins for job postings, content moderation, and automated news feeds
+\item \textbf{Community Safety:} Implemented report post plugin ensuring secure environment; created Hacker News bot for tech news automation
+\item \textbf{Recruitment Integration:} Built job posting integration generating 5,000+ monthly applications across 200+ monthly job posts, connecting recruiters with developers
+\end{itemize}}
 
-    \switchcolumn
+\cventry{Jan--Jun 2020}{Software Engineer Intern}{ ACEOnline (Previously known as FrostInteractive)}{Bangalore (Remote)}{}{
+\begin{itemize}
+\item \textbf{Platform Management:} Conducted research and implemented SMS OTP services using AWS SNS, integrated caching with Redis, and developed a Payment Service supporting multiple payment gateways using Java and React.js
+\end{itemize}}
 
-    \sectiontitle{skills}
-    \sectioncontent{
-        \begin{itemize}
-        \item \color{black!70}\small{\textbf{React.js}, React Native, Redux, React Hooks}
-        \item \color{black!70}\small{\textbf{Node.js}, Java(\textbf{Springboot}), Python(\textbf{Flask}, Django), \textbf{Golang}}
-        \item \color{black!70}\small{\textbf{Postgres, MongoDB, MySQL}, Firebase, Redis}
-        \item \color{black!70}\small{\textbf{Elasticsearch, Logstash}, Hawkeye, and Monstashe}
-        \item \color{black!70}\small{DialogFlow, Image Processing, Deep Learning}
-        \end{itemize}
-    }
+\cventry{May--July 2019}{Image Processing and Machine Learning Intern}{Antworks}{Chennai}{}{
+\begin{itemize}
+\item \textbf{Research:} Utilised CNN and CTCloss function to detect and recognise Arabic handwritten text
+\item \textbf{Github:} \url{https://github.com/rr250/Arabic-Handwritten-Text-Detection-and-Recognization}
+\end{itemize}}
 
-    \sectiontitle{experience}
-    \sectioncontent{
+\cventry{May--July 2018}{ Machine Learning Research Intern}{IIT Bombay - Prof. Amitabh Sanyal}{Mumbai}{}{
+\begin{itemize}
+\item \textbf{Research:} Worked on ML project and used Racket
+\end{itemize}}
 
-      \job{Telio R\&D India Private Limited}{SDE-1}{Bangalore(Remote) | Sep 2021 to Present}{React.js, Java, Node.js, ES, Postgres, MongoDB}{}\\
-      \textrm{Developed and oversaw a comprehensive \textbf{dashboard} to manage diverse aspects of the business, such as \textbf{orders, promotions, catalogs, customers, and users}, and collaborated with \textbf{cross-functional teams} for effective implementation.}
-      \begin{itemize}
-        \item \textbf{Improved net revenue by 0.5\%} by implementing a \textbf{Net Take Rate (NTR)} feature that ensures any price changes require approval if it would cause the NTR to fall below a minimum value.
-        \item Created a \textbf{Lego UI Library} to provide frontend developers with custom React components that follow Phoenix's design guidelines.
-        \item \textbf{Reduced errors by 33\%} by implementing a \textbf{workflow approval} feature to ensure all changes are authorized by higher management.
-        \item Implemented \textbf{Schedule Price and Tier Price} features for SKUs, allowing for lower prices for scheduled durations and more quantities respectively.
-        \item Implemented \textbf{user management and customer management} features within Phoenix to streamline these processes and eliminate the need for a complex Keycloak interface.
-        \item Improved search functionality across the platform.
-        \item \textbf{Managed and guided interns} in the implementation of location and VAT info modules.
-      \end{itemize}
-      \vspace{4mm}
+% ------------------------------ Selected Projects ------------------------------
+\section{Selected Projects}
+\cventry{}{Happyfier - Mental Wellness Platform}{React.js, Firebase}{}{}{Mental health platform featuring story sharing, volunteer support, psychiatrist consultations, and gratitude journaling capabilities for improved wellbeing\\
+\textbf{Live Demo:} \url{happyfier.firebaseapp.com}}
 
-      
-      \job{Shopse}{Software Engineer}{Mumbai(Remote) | Oct 2020 to Sep 2021}{Flask,Springboot,React.js,MongoDB}{}\\
-      \textrm{Developed and managed a dashboard for internal users(such as managers, sales team, and customer care) and merchants (\textbf{Byjus, Simplilearn, VLCC, Honda}, etc.), and lenders (\textbf{Ujjivan, Axis banks}).}
-      \begin{itemize}
-        \item Designed and implemented a \textbf{Two Wheeler Loan with Ujjivan and TVS}.
-        \item Implemented a \textbf{Sales team dashboard} that allows sales agents to track all their leads and managers to monitor the team's performance.
-        \item Assisted Transaction feature helped customer care identify customers facing difficulties in transactions and \textbf{reduce failed transaction percentage by 65\%}.
-        \item Improved \textbf{roles framework} in the dashboard and backed everything by permissions.
-        \item Improved \textbf{AWS SNS lambda functions} for various communications like WhatsApp, SMS, email, Slack, etc.
-        \item Work directly contributed to the company \textbf{securing ₹40Cr funding}.
-      \end{itemize}
-      \vspace{4mm}
-      
-      \job{Scaler (Previously known as InterviewBit)}{Software Engineer Intern}{Bangalore(Remote) | Jun 2020 to Oct 2020}{Golang,React.js,MySql}{}\\
-      \textrm{Managed \textbf{Scaler Chat}, an open-source platform with a user base of \textbf{25,000 and 2,000 daily users}. Developed plugins for various functionalities such as \textbf{job postings, reporting posts, and contest and tech news alerts}.}
-      \begin{itemize}
-        \item Ensured a \textbf{safe environment for female users} by implementing a report post plugin.
-        \item Developed a Hacker News Bot to post top tech news.
-        \item Integration for recruiters to post jobs and users to apply resulted in \textbf{5000+ monthly applications on 200+ monthly job posts}.
-      \end{itemize}
-      \vspace{4mm}
+\cventry{}{Jobpost Plugin - Automation System}{Golang, Mattermost, Google Sheets}{}{}{Streamlined job application management system integrating with Mattermost, reducing recruitment spam and enabling automated applicant tracking\\
+\textbf{GitHub:} \url{github.com/rr250/jobpost-plugin}}
 
-      \job{ACE Online (Previously known as Frost Interactive)}{Software Engineer Intern}{Bangalore | Jan 2020 to May 2020}{Java, React.js}{}\\
-      \begin{itemize}
-        \item Conducted research on SMS OTP services and implemented AWS SNS.
-        \item Implemented Caching through Redis.
-        \item Worked on Payment-Service for multi payment-gateways.
-      \end{itemize}
-      \vspace{4mm}
+% ------------------------------ Education ------------------------------
+\section{Education}
+\cventry{2016--2020}{B.Tech in Computer Science \& Engineering}{Shiv Nadar University}{Greater Noida, India}{Minor in Mathematics}{
+\begin{itemize}
+\item 8.05 CGPA; Dean's List recipient (2019); University consistently ranked in top 100 Indian institutions (NIRF Rankings)
+\end{itemize}}
 
-      % \job{Copmapny}{Title}{Location | date}{skills}{}\\
-      % \textrm{description}
-      % \begin{itemize}
-      %   \item bullet point 1
-      %   \item bullet point 2
-      % \end{itemize}
-      % \vspace{4mm}
-
-      % \job{Copmapny}{Title}{Location | date}{skills}{}\\
-      % \textrm{description}
-      % \begin{itemize}
-      %   \item bullet point 1
-      %   \item bullet point 2
-      % \end{itemize}
-      % \vspace{4mm}
-
-      
-    }
-
-    % \normaltext \hfill \tiny Last updated \today
-
-    \end{paracol}
+% ------------------------------ Achievements \& Recognition ------------------------------
+\section{Achievements \& Recognition}
+\cvlistitem{\textbf{Q3 2024 Award (ConnectWise):} Leadership excellence in Asio Ticketing and PSA-in-ASIO IT Nation deliverables}
+\cvlistitem{\textbf{Performance Reviews:} Exceptional ratings (4.6-5.0/5.0) across all evaluation criteria, including communication, problem-solving, and team collaboration}
+\cvlistitem{\textbf{1st Place:} Scaler Hackathon (2020) - Premier coding competition at leading EdTech platform}
+\cvlistitem{\textbf{Top 100:} Bit 2.0 Coding Contest, InterviewBit (2019) - National-level programming competition}
+\cvlistitem{\textbf{Academic Excellence:} Dean's List, Shiv Nadar University (2019); IIT-JEE Advanced AIR 7742 (2016)}
 
 \end{document}
